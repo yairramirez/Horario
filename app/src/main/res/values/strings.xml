@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Horario</string>
+    <string name="nombre">Nombre</string>
+    <string name="profesion">Profesion</string>
+    <string name="txtNombre"></string>
+    <string name="txtProfesion"></string>
+    <string name="consultaSalones">Consulta Salones Libres</string>
+    <string name="txtTitulo">Consulta de Usuarios</string>
+    <string name="txtBoleta"></string>
+</resources>
