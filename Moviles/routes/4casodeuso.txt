@@ -1,0 +1,37 @@
+\begin{UseCase}{CU4}{Buscar horario de profesor}{
+		El usuario general ingresa el nombre de un profesor y la aplicación le mostrará una pantalla con la información del horario del profesor.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{Navarro Ramírez Juan Manuel}
+		\UCitem{Supervisa}{}
+		\UCitem{Actor}{Usuario general}
+		\UCitem{Propósito}{Poder localizar de manera mas sencilla a un profesor dentro de los horarios de clase }
+        \UCitem{Precondiciones}{Por lo menos debe haber un horario registrado en la base de datos.}
+        \UCitem{Postcondiciones}{El usuario podrá visualizar la información de un profesor}
+		\UCitem{Entradas}{
+        \begin{itemize}
+        	\item Nombre del profesor
+        \end{itemize}}
+		\UCitem{Origen}{Teclado }
+		\UCitem{Salidas}{Nombre del profesor, salón, grupos, horarios y materias que imparte}
+		\UCitem{Destino}{Pantalla}
+		\UCitem{Errores}{
+        	\begin{itemize}
+            	\item Profesor no encontrado en la base de datos.
+            \end{itemize}
+       }
+		\UCitem{Observaciones}{}
+		\end{UseCase}
+    \begin{UCtrayectoria}{Principal}
+        \UCpaso[\UCactor] Desde la pantalla principal presiona el botón "Buscar".
+        \UCpaso Carga la pantalla "Búsqueda".
+		\UCpaso[\UCactor] Presiona el botón "Buscar profesor."
+		\UCpaso Carga la pantlla "búsqueda profesor" .
+        \UCpaso[\UCactor] Seleccionar el nombre del profesor del que desea ver el horario.
+        \UCpaso[\UCactor] Presiona sobre el nombre del profesor".\Trayref{A}
+        \UCpaso Muestra la información del profesor 
+    \end{UCtrayectoria}
+    \begin{UCtrayectoriaA}{A}{El nombre del profesor no coincide con ningún profesor que esté registrado en la base de datos.}
+		\UCpaso Muestra el Mensaje ''No se encontraton datos del profesor''
+        \UCpaso Redirecciona al primer paso de la trayectoria principal.
+	\end{UCtrayectoriaA}
